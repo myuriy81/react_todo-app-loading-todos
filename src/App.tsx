@@ -3,6 +3,7 @@ import { Todo } from './types/Todo';
 import * as todoService from './api/todos';
 import classNames from 'classnames';
 import { USER_ID } from './api/todos';
+import { SelectOption } from './types/Todo';
 
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -41,15 +42,11 @@ export const App: React.FC = () => {
 
   const filteredTodos = todos.filter(todo => {
     switch (filter) {
-      case 'all':
-        return true;
-
-      case 'active':
+      case SelectOption.Active:
         return !todo.completed;
-
-      case 'completed':
+      case SelectOption.Completed:
         return todo.completed;
-
+      case SelectOption.All:
       default:
         return true;
     }

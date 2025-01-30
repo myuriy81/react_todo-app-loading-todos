@@ -11,7 +11,8 @@ export const deleteTodo = () => {
   return client.delete(`/todos?userId=${USER_ID}`);
 };
 
-{/*
+{
+  /*
   export const createTodo = ({ userId, title, completed }: Omit<Todo, 'id'>) => {
   return client.post<Todo>(`/todos?userId=${USER_ID}`, {
     userId,
@@ -19,6 +20,7 @@ export const deleteTodo = () => {
     completed,
   });
 };
-*/}
+*/
+}
 
 // Add more methods here
